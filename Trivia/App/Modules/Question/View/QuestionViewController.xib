@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionViewController" customModule="Trivia" customModuleProvider="target">
+            <connections>
+                <outlet property="questionLabel" destination="KKk-j1-sVy" id="YAk-qz-sMY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RANDOM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pn8-7D-5Gt">
+                    <rect key="frame" x="20" y="114" width="374" height="48"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLZ-iP-dSY">
+                    <rect key="frame" x="54" y="710" width="111" height="42"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Correcto">
+                        <fontDescription key="titleFontDescription" type="system" pointSize="23"/>
+                        <color key="baseForegroundColor" systemColor="systemGreenColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="rightAnswerTapped:" destination="-1" eventType="touchUpInside" id="FyS-Ia-JYb"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLM-WQ-4Tq">
+                    <rect key="frame" x="241" y="710" width="125" height="42"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Incorrecto">
+                        <fontDescription key="titleFontDescription" type="system" pointSize="23"/>
+                        <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="wrongAnswerTapped:" destination="-1" eventType="touchUpInside" id="NNl-Nj-5dM"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hola" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKk-j1-sVy">
+                    <rect key="frame" x="20" y="262" width="374" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KKk-j1-sVy" secondAttribute="trailing" constant="20" id="4iY-t3-rEu"/>
+                <constraint firstItem="KKk-j1-sVy" firstAttribute="top" secondItem="Pn8-7D-5Gt" secondAttribute="bottom" constant="100" id="Cd4-Rc-VfZ"/>
+                <constraint firstItem="KKk-j1-sVy" firstAttribute="top" secondItem="Pn8-7D-5Gt" secondAttribute="bottom" constant="100" id="L1l-EK-M0P"/>
+                <constraint firstItem="KKk-j1-sVy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="OCp-Nl-PZf"/>
+                <constraint firstItem="Pn8-7D-5Gt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Rg4-sc-tcV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pn8-7D-5Gt" secondAttribute="trailing" constant="20" id="aVt-uP-nNA"/>
+                <constraint firstItem="KKk-j1-sVy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="muk-RN-BrO"/>
+                <constraint firstItem="Pn8-7D-5Gt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="70" id="tGe-pX-DBT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KKk-j1-sVy" secondAttribute="trailing" constant="20" id="wC3-b5-KvJ"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="108.48214285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

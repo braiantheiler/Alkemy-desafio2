@@ -16,7 +16,6 @@ class CategoryService {
                         decoder.keyDecodingStrategy = .convertFromSnakeCase
                         let categoryResponse = try decoder.decode(CategoryResponse.self, from: data)
                         onComplete(categoryResponse.results)
-                        print(categoryResponse)
                     } else {
                         onError()
                     }

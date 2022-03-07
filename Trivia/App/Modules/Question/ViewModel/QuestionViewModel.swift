@@ -63,7 +63,9 @@ class QuestionViewModel {
     }
     
     func validateCurrentQuestion(answer: Bool) -> Bool {
-        questions[currentQuestionIndex].question == questions[currentQuestionIndex].correct_answer
+        let answerSelected = answer
+        let answerCorrect = (questions[currentQuestionIndex].correct_answer as NSString).boolValue
+        return answerSelected == answerCorrect
     }
     
 }

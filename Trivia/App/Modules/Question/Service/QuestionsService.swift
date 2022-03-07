@@ -14,6 +14,7 @@ class QuestionsService {
                         let decoder = JSONDecoder()
                         let questionResponse = try decoder.decode(QuestionResponse.self, from: data)
                         onComplete(questionResponse.results)
+//                        print(questionResponse)
                     } else {
                         onError()
                     }

@@ -19,13 +19,27 @@ class InitialViewController: UIViewController {
     }
     
     
+//    @IBAction func btnEmpezar(_ sender: Any) {
+//        if textField.hasText {
+//            let categoriesViewController = CategoriesViewController(nibName: "CategoriesViewController",bundle: nil)
+//            self.present(categoriesViewController, animated: true)
+//        }
+//        else {
+//            print("Por favor ingrese un nombre de usuario primero")
+//        }
+//    }
+    
     @IBAction func btnEmpezar(_ sender: Any) {
         if textField.hasText {
-            let categoriesViewController = CategoriesViewController(nibName: "CategoriesViewController",bundle: nil)
-            self.present(categoriesViewController, animated: true)
+            let questionViewController = QuestionViewController()
+            self.navigationController?.pushViewController(questionViewController, animated: true)
         }
         else {
-            print("Por favor ingrese un nombre de usuario primero")
+            let message = "Por favor ingrese un nombre para acceder!"
+            
+            let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true)
         }
     }
 

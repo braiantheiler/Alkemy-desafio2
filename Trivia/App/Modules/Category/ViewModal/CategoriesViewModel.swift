@@ -8,18 +8,22 @@
 import Foundation
 
 class CategoriesViewModel {
+    
     private let categoriesService: CategoryService
     private var categories = [Category]()
+    private var delegate: CategoryListDelegate
     
-    init(service: CategoryService){
+    init(service: CategoryService, delegate: CategoryListDelegate){
         self.categoriesService = service
+        self.delegate = delegate
     }
 
-    func getCategories(completion: @escaping() -> Void){
+    func getCategories(){
         categoriesService.getCategories { categories in
             self.categories = categories // Obtenemos las categorias del servicio
+            self.delegate.reloadTable()
         } onError: {
-            // TODO
+            self.delegate.showError()
         }
     }
 
@@ -28,7 +32,7 @@ class CategoriesViewModel {
     }
     
     func getCategoriesCount() -> Int {
-        categories.count
+        return categories.count
     }
 
 //    func getCategoryName(at index: Int) -> String {

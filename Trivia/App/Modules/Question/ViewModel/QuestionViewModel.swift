@@ -19,12 +19,6 @@ class QuestionViewModel {
         } onError: {
 
         }
-//        questionsService.getQuestions(for: categoryID){ [weak self] questions in
-//        guard let strongSelf = self else { return }
-//
-//        strongSelf.questions = questions //significa
-//        completion()
-//        }
     }
     
     func areQuestionsAvailable() -> Bool {

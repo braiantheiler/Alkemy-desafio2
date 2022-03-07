@@ -27,11 +27,19 @@ class QuestionViewController: UIViewController {
         let result = validateCurrentQuestion(answer: false)
         sendResultMessage(for: result)
     }
+//    @IBAction func wrongAnswerTapped(_ sender: UIButton) {
+//        let result = validateCurrentQuestion(answer: false)
+//        sendResultMessage(for: result)
+//    }
 
     @IBAction func rightAnswerTapped(_ sender: UIButton) {
         let result = validateCurrentQuestion(answer: true)
         sendResultMessage(for: result)
     }
+//    @IBAction func rightAnswerTapped(_ sender: UIButton) {
+//        let result = validateCurrentQuestion(answer: true)
+//        sendResultMessage(for: result)
+//    }
     
     private func updateQuestion(){
         setQuestion(question: viewModel.getNextQuestion())

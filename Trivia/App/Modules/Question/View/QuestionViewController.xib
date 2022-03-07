@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,59 +21,63 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RANDOM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pn8-7D-5Gt">
-                    <rect key="frame" x="20" y="114" width="374" height="48"/>
+                    <rect key="frame" x="20" y="94" width="374" height="48"/>
                     <fontDescription key="fontDescription" type="system" pointSize="40"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLZ-iP-dSY">
-                    <rect key="frame" x="54" y="710" width="111" height="42"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Correcto">
-                        <fontDescription key="titleFontDescription" type="system" pointSize="23"/>
-                        <color key="baseForegroundColor" systemColor="systemGreenColor"/>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="rightAnswerTapped:" destination="-1" eventType="touchUpInside" id="FyS-Ia-JYb"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLM-WQ-4Tq">
-                    <rect key="frame" x="241" y="710" width="125" height="42"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Incorrecto">
-                        <fontDescription key="titleFontDescription" type="system" pointSize="23"/>
-                        <color key="baseForegroundColor" systemColor="systemRedColor"/>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="wrongAnswerTapped:" destination="-1" eventType="touchUpInside" id="NNl-Nj-5dM"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hola" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKk-j1-sVy">
-                    <rect key="frame" x="20" y="262" width="374" height="36"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hola" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKk-j1-sVy">
+                    <rect key="frame" x="20" y="172" width="374" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkQ-Jm-fzm">
+                    <rect key="frame" x="20" y="709" width="141" height="133"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="">
+                        <imageReference key="image" image="checkmark.circle" catalog="system" symbolScale="default"/>
+                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="100"/>
+                        <color key="baseForegroundColor" systemColor="systemGreenColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="rightAnswerTapped:" destination="-1" eventType="touchUpInside" id="Wpf-VA-VsO"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bQ-78-ZY6">
+                    <rect key="frame" x="259" y="713" width="135" height="109"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="xmark.circle" catalog="system" title="">
+                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="77"/>
+                        <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="wrongAnswerTapped:" destination="-1" eventType="touchUpInside" id="xXk-WL-1H3"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KKk-j1-sVy" secondAttribute="trailing" constant="20" id="4iY-t3-rEu"/>
-                <constraint firstItem="KKk-j1-sVy" firstAttribute="top" secondItem="Pn8-7D-5Gt" secondAttribute="bottom" constant="100" id="Cd4-Rc-VfZ"/>
-                <constraint firstItem="KKk-j1-sVy" firstAttribute="top" secondItem="Pn8-7D-5Gt" secondAttribute="bottom" constant="100" id="L1l-EK-M0P"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="fkQ-Jm-fzm" secondAttribute="bottom" constant="20" id="6zY-rP-r3v"/>
+                <constraint firstItem="fkQ-Jm-fzm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="DHv-GM-STh"/>
+                <constraint firstItem="KKk-j1-sVy" firstAttribute="top" secondItem="Pn8-7D-5Gt" secondAttribute="bottom" constant="30" id="L1l-EK-M0P"/>
                 <constraint firstItem="KKk-j1-sVy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="OCp-Nl-PZf"/>
                 <constraint firstItem="Pn8-7D-5Gt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Rg4-sc-tcV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9bQ-78-ZY6" secondAttribute="bottom" constant="40" id="WIp-ra-iNV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9bQ-78-ZY6" secondAttribute="trailing" constant="20" id="XZQ-rL-hNv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pn8-7D-5Gt" secondAttribute="trailing" constant="20" id="aVt-uP-nNA"/>
                 <constraint firstItem="KKk-j1-sVy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="muk-RN-BrO"/>
-                <constraint firstItem="Pn8-7D-5Gt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="70" id="tGe-pX-DBT"/>
+                <constraint firstItem="Pn8-7D-5Gt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="tGe-pX-DBT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KKk-j1-sVy" secondAttribute="trailing" constant="20" id="wC3-b5-KvJ"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="108.48214285714285"/>
         </view>
     </objects>
     <resources>
+        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
+        <image name="xmark.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

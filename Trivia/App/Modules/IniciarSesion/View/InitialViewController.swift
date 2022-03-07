@@ -31,8 +31,11 @@ class InitialViewController: UIViewController {
     
     @IBAction func btnEmpezar(_ sender: Any) {
         if textField.hasText {
-            let questionViewController = QuestionViewController()
-            self.navigationController?.pushViewController(questionViewController, animated: true)
+            let tabBarController = TabBarController()
+            tabBarController.modalPresentationStyle = .overFullScreen
+//            self.present(tabBarController, animated: true)
+            self.navigationController?.pushViewController(tabBarController, animated: true)
+            
         }
         else {
             let message = "Por favor ingrese un nombre para acceder!"
@@ -45,7 +48,7 @@ class InitialViewController: UIViewController {
 
     private func presentTabBarController(){
         let tabBarController = TabBarViewController()
-        tabBarController.modalPresentationStyle = .overFullScreen
+//        tabBarController.modalPresentationStyle = .overFullScreen
         self.present(tabBarController, animated: true)
     }
 

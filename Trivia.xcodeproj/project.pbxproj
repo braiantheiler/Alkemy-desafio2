@@ -29,6 +29,9 @@
 		FB93160127C06F4400AF668A /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9315FF27C06F4400AF668A /* InitialViewController.swift */; };
 		FB93160227C06F4400AF668A /* InitialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB93160027C06F4400AF668A /* InitialViewController.xib */; };
 		FBB1FE4127C827AF0095DBC3 /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1FE4027C827AF0095DBC3 /* QuestionViewModel.swift */; };
+		FBBBFA2727D6BD1700AC3BBE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBFA2627D6BD1700AC3BBE /* TabBarController.swift */; };
+		FBDD111A27D6582100D8AE56 /* CategoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDD111827D6582100D8AE56 /* CategoryListTableViewCell.swift */; };
+		FBDD111B27D6582100D8AE56 /* CategoryListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDD111927D6582100D8AE56 /* CategoryListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		FB9315FF27C06F4400AF668A /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		FB93160027C06F4400AF668A /* InitialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialViewController.xib; sourceTree = "<group>"; };
 		FBB1FE4027C827AF0095DBC3 /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
+		FBBBFA2627D6BD1700AC3BBE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		FBDD111827D6582100D8AE56 /* CategoryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListTableViewCell.swift; sourceTree = "<group>"; };
+		FBDD111927D6582100D8AE56 /* CategoryListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,7 @@
 		FB5E778827C972A80068DFC2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FBBBFA2227D6BC8D00AC3BBE /* TabBar */,
 				FB5E779827C977000068DFC2 /* IniciarSesion */,
 				FB5E778C27C9746F0068DFC2 /* Question */,
 				FB5E778B27C974620068DFC2 /* Category */,
@@ -195,6 +202,8 @@
 			children = (
 				FB25F86F27C3F28900FFAF74 /* CategoriesViewController.swift */,
 				FB25F87027C3F28900FFAF74 /* CategoriesViewController.xib */,
+				FBDD111827D6582100D8AE56 /* CategoryListTableViewCell.swift */,
+				FBDD111927D6582100D8AE56 /* CategoryListTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -280,6 +289,14 @@
 			path = Trivia;
 			sourceTree = "<group>";
 		};
+		FBBBFA2227D6BC8D00AC3BBE /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				FBBBFA2627D6BD1700AC3BBE /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -345,6 +362,7 @@
 				FB25F87227C3F28900FFAF74 /* CategoriesViewController.xib in Resources */,
 				FB25F86827C3E20C00FFAF74 /* QuestionViewController.xib in Resources */,
 				FB93160227C06F4400AF668A /* InitialViewController.xib in Resources */,
+				FBDD111B27D6582100D8AE56 /* CategoryListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +418,7 @@
 				FB25F86727C3E20C00FFAF74 /* QuestionViewController.swift in Sources */,
 				FB5E779D27C979380068DFC2 /* Category.swift in Sources */,
 				FB5E77A527CD5EA50068DFC2 /* CategoryResponse.swift in Sources */,
+				FBBBFA2727D6BD1700AC3BBE /* TabBarController.swift in Sources */,
 				FB5E779727C975950068DFC2 /* ApiManager.swift in Sources */,
 				FB5E77A127CD59680068DFC2 /* CategoryService.swift in Sources */,
 				FB9315EC27C0496A00AF668A /* AppDelegate.swift in Sources */,
@@ -409,6 +428,7 @@
 				FB5E77A327CD5B9F0068DFC2 /* Constants.swift in Sources */,
 				FB25F87127C3F28900FFAF74 /* CategoriesViewController.swift in Sources */,
 				FB535CE927C5D63D00CAED3D /* CategoriesViewModel.swift in Sources */,
+				FBDD111A27D6582100D8AE56 /* CategoryListTableViewCell.swift in Sources */,
 				FBB1FE4127C827AF0095DBC3 /* QuestionViewModel.swift in Sources */,
 				FB5E77AD27CD7D2D0068DFC2 /* QuestionsService.swift in Sources */,
 				FB5E779F27C9794D0068DFC2 /* Question.swift in Sources */,

@@ -1,47 +1,58 @@
 import UIKit
 
+protocol CategoryListDelegate {
+    func toogleLoading()
+    func reloadTable()
+    func showError()
+}
+
 class CategoriesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
     private var viewModel: CategoriesViewModel!
+    private var service = CategoryService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel = CategoriesViewModel(service: CategoryService())
+        self.viewModel = CategoriesViewModel(service: self.service, delegate: self)
+        self.viewModel?.getCategories()
+        setupView()
+
+//        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+//        getCategories()
+    }
+
+    private func setupView(){
+        self.title = "Category"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        self.tableView.register(UINib(nibName: "CategoryListTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryListTableViewCell")
         self.tableView.dataSource = self
         self.tableView.delegate = self
-
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        getCategories()
     }
     
-    func getCategories() {
-        viewModel?.getCategories {
-            self.tableView.reloadData() //Actualiza la tabla
-        }  //Esta informacion de cat no se guardan aca porque estan en el ViewModel
+}
+
+extension CategoriesViewController: CategoryListDelegate {
+    func toogleLoading() {
+        
+    }
+    
+    func reloadTable() {
+        self.tableView.reloadData()
+    }
+    
+    func showError() {
+        
     }
 }
 
-extension CategoriesViewController: UITableViewDataSource, UITableViewDelegate {
+extension CategoriesViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         tableView.deselectRow(at: indexPath, animated: true)
+        print(viewModel.getCategory(at: indexPath.row))
         showQuestions(for: viewModel.getCategory(at: indexPath.row))
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.getCategoriesCount()
-    }
-
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
-        cell.textLabel?.text = viewModel.getCategory(at: indexPath.row).name
-        cell.accessoryType = .disclosureIndicator
-        cell.backgroundColor = UIColor(named: "Alkemy")
-        return cell
     }
 
     private func showQuestions(for category: Category) {
@@ -52,4 +63,22 @@ extension CategoriesViewController: UITableViewDataSource, UITableViewDelegate {
         navigationController?.pushViewController(questionViewController, animated: true)
     }
 
+}
+
+extension CategoriesViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.viewModel?.getCategoriesCount() ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryListTableViewCell", for: indexPath) as! CategoryListTableViewCell
+
+        cell.categoryName.text = self.viewModel?.getCategory(at: indexPath.row).name
+
+        return cell
+
+    }
+    
+    
 }
